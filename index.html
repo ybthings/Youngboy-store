@@ -12,22 +12,16 @@
       padding: 30px 15px;
       font-family: 'Share Tech Mono', monospace;
       background: #000;
-      color: #00cfff;
+      color: #00aa66;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      background-image: linear-gradient(to bottom, #000000, #000f1a);
-      animation: matrixScroll 30s linear infinite;
-    }
-
-    @keyframes matrixScroll {
-      from { background-position: 0 0; }
-      to { background-position: 0 1000px; }
+      background-image: linear-gradient(to bottom, #000000, #001a11);
     }
 
     h1 {
-      color: #00cfff;
+      color: #00cc88;
       text-align: center;
       font-size: 2.5em;
       margin-bottom: 10px;
@@ -37,7 +31,7 @@
       width: 160px;
       height: 160px;
       border-radius: 12px;
-      box-shadow: 0 0 20px #00cfff;
+      box-shadow: 0 0 20px #007755;
       margin: 20px 0;
     }
 
@@ -51,36 +45,48 @@
     }
 
     .product-card {
-      background: rgba(0, 20, 30, 0.6);
-      border: 1px solid #00cfff;
+      background: rgba(0, 20, 10, 0.6);
+      border: 1px solid #005533;
       border-radius: 12px;
       padding: 15px;
-      box-shadow: 0 0 15px #003344;
+      box-shadow: 0 0 10px #003322;
+      cursor: pointer;
     }
 
     .product-title {
       font-size: 1.2em;
       font-weight: bold;
-      color: #00e0ff;
+      color: #00cc88;
     }
 
-    .product-detail {
+    .sub-options {
+      display: none;
       margin-top: 10px;
+    }
+
+    .option-item {
+      background: rgba(0, 40, 20, 0.6);
+      border: 1px solid #004422;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 8px;
+    }
+
+    .option-item span {
+      display: block;
       font-size: 0.9em;
-      color: #80eaff;
-      white-space: pre-line;
+      margin-bottom: 6px;
     }
 
     .buy-btn {
-      margin-top: 12px;
-      background-color: #00cfff;
+      background-color: #00cc88;
       color: black;
       border: none;
-      padding: 10px;
-      border-radius: 8px;
+      padding: 8px;
+      border-radius: 6px;
       font-weight: bold;
       font-family: inherit;
-      box-shadow: 0 0 8px #00cfff;
+      box-shadow: 0 0 6px #00aa66;
       cursor: pointer;
       transition: all 0.2s ease-in-out;
       width: 100%;
@@ -90,14 +96,6 @@
       transform: scale(1.05);
     }
 
-    ul {
-      padding-left: 18px;
-      margin: 6px 0 0 0;
-    }
-
-    li {
-      margin: 4px 0;
-    }
   </style>
 </head>
 <body>
@@ -107,40 +105,64 @@
 
   <div class="section">
 
-    <!-- PANEL SECTION -->
-    <div class="product-card">
+    <!-- Panel -->
+    <div class="product-card" onclick="toggleOptions('panel')">
       <div class="product-title">Panel</div>
-      <div class="product-detail">
-Tersedia Pilihan:
-<ul>
-  <li>1GB - Rp10.000</li>
-  <li>3GB - Rp25.000</li>
-  <li>Unlimited - Rp50.000</li>
-</ul>
+      <div id="panel" class="sub-options">
+        <div class="option-item">
+          <span>1GB - Rp10.000</span>
+          <button class="buy-btn" onclick="event.stopPropagation(); buy('Panel 1GB')">Beli Sekarang</button>
+        </div>
+        <div class="option-item">
+          <span>3GB - Rp25.000</span>
+          <button class="buy-btn" onclick="event.stopPropagation(); buy('Panel 3GB')">Beli Sekarang</button>
+        </div>
+        <div class="option-item">
+          <span>Unlimited - Rp50.000</span>
+          <button class="buy-btn" onclick="event.stopPropagation(); buy('Panel Unlimited')">Beli Sekarang</button>
+        </div>
       </div>
-      <button class="buy-btn" onclick="buy('Panel Hosting')">Beli Sekarang</button>
     </div>
 
-    <!-- SCRIPT SECTION -->
-    <div class="product-card">
+    <!-- Script -->
+    <div class="product-card" onclick="toggleOptions('script')">
       <div class="product-title">Script</div>
-      <div class="product-detail">
-Tersedia Script:
-<ul>
-  <li>Script Aphophis</li>
-  <li>Void Telegram</li>
-  <li>Bug Storm</li>
-  <li>Karasu WaTools</li>
-  <li>Bypass License</li>
-  <li>Anti Crack Shell</li>
-</ul>
+      <div id="script" class="sub-options">
+        <div class="option-item">
+          <span>Script Aphophis</span>
+          <button class="buy-btn" onclick="event.stopPropagation(); buy('Script Aphophis')">Beli Sekarang</button>
+        </div>
+        <div class="option-item">
+          <span>Void Telegram</span>
+          <button class="buy-btn" onclick="event.stopPropagation(); buy('Void Telegram')">Beli Sekarang</button>
+        </div>
+        <div class="option-item">
+          <span>Bug Storm</span>
+          <button class="buy-btn" onclick="event.stopPropagation(); buy('Bug Storm')">Beli Sekarang</button>
+        </div>
+        <div class="option-item">
+          <span>Karasu WaTools</span>
+          <button class="buy-btn" onclick="event.stopPropagation(); buy('Karasu WaTools')">Beli Sekarang</button>
+        </div>
+        <div class="option-item">
+          <span>Bypass License</span>
+          <button class="buy-btn" onclick="event.stopPropagation(); buy('Bypass License')">Beli Sekarang</button>
+        </div>
+        <div class="option-item">
+          <span>Anti Crack Shell</span>
+          <button class="buy-btn" onclick="event.stopPropagation(); buy('Anti Crack Shell')">Beli Sekarang</button>
+        </div>
       </div>
-      <button class="buy-btn" onclick="buy('Script Pack')">Beli Sekarang</button>
     </div>
 
   </div>
 
   <script>
+    function toggleOptions(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+
     function buy(product) {
       const url = `payment.html?product=${encodeURIComponent(product)}`;
       window.location.href = url;
