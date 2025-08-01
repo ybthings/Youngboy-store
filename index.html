@@ -12,12 +12,12 @@
       padding: 30px 15px;
       font-family: 'Share Tech Mono', monospace;
       background: #000;
-      color: #00ff99;
+      color: #00cfff;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      background-image: linear-gradient(to bottom, #000000, #001a00);
+      background-image: linear-gradient(to bottom, #000000, #000f1a);
       animation: matrixScroll 30s linear infinite;
     }
 
@@ -27,7 +27,7 @@
     }
 
     h1 {
-      color: #00ffcc;
+      color: #00cfff;
       text-align: center;
       font-size: 2.5em;
       margin-bottom: 10px;
@@ -35,6 +35,120 @@
 
     .thumbnail {
       width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00cfff;
+      margin: 20px 0;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 350px;
+      margin-bottom: 40px;
+    }
+
+    .product-card {
+      background: rgba(0, 20, 30, 0.6);
+      border: 1px solid #00cfff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 0 15px #003344;
+    }
+
+    .product-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #00e0ff;
+    }
+
+    .product-detail {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #80eaff;
+      white-space: pre-line;
+    }
+
+    .buy-btn {
+      margin-top: 12px;
+      background-color: #00cfff;
+      color: black;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-family: inherit;
+      box-shadow: 0 0 8px #00cfff;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+
+    .buy-btn:hover {
+      transform: scale(1.05);
+    }
+
+    ul {
+      padding-left: 18px;
+      margin: 6px 0 0 0;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Youngboy Store</h1>
+  <img src="https://raw.githubusercontent.com/ybthings/Pwsc/refs/heads/main/file_00000000ece461f98597f1297d6d24a6.png" class="thumbnail" />
+
+  <div class="section">
+
+    <!-- PANEL SECTION -->
+    <div class="product-card">
+      <div class="product-title">Panel</div>
+      <div class="product-detail">
+Tersedia Pilihan:
+<ul>
+  <li>1GB - Rp10.000</li>
+  <li>3GB - Rp25.000</li>
+  <li>Unlimited - Rp50.000</li>
+</ul>
+      </div>
+      <button class="buy-btn" onclick="buy('Panel Hosting')">Beli Sekarang</button>
+    </div>
+
+    <!-- SCRIPT SECTION -->
+    <div class="product-card">
+      <div class="product-title">Script</div>
+      <div class="product-detail">
+Tersedia Script:
+<ul>
+  <li>Script Aphophis</li>
+  <li>Void Telegram</li>
+  <li>Bug Storm</li>
+  <li>Karasu WaTools</li>
+  <li>Bypass License</li>
+  <li>Anti Crack Shell</li>
+</ul>
+      </div>
+      <button class="buy-btn" onclick="buy('Script Pack')">Beli Sekarang</button>
+    </div>
+
+  </div>
+
+  <script>
+    function buy(product) {
+      const url = `payment.html?product=${encodeURIComponent(product)}`;
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>      width: 160px;
       height: 160px;
       border-radius: 12px;
       box-shadow: 0 0 20px #00ff99;
