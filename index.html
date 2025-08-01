@@ -12,16 +12,16 @@
       padding: 30px 15px;
       font-family: 'Share Tech Mono', monospace;
       background: #000;
-      color: #00aa66;
+      color: #ff2a2a;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      background-image: linear-gradient(to bottom, #000000, #001a11);
+      background-image: linear-gradient(to bottom, #000000, #1a0000);
     }
 
     h1 {
-      color: #00cc88;
+      color: #ff3333;
       text-align: center;
       font-size: 2.5em;
       margin-bottom: 10px;
@@ -31,7 +31,7 @@
       width: 160px;
       height: 160px;
       border-radius: 12px;
-      box-shadow: 0 0 20px #007755;
+      box-shadow: 0 0 20px #cc0000;
       margin: 20px 0;
     }
 
@@ -40,60 +40,49 @@
       flex-direction: column;
       gap: 20px;
       width: 100%;
-      max-width: 350px;
+      max-width: 360px;
       margin-bottom: 40px;
     }
 
     .product-card {
-      background: rgba(0, 20, 10, 0.6);
-      border: 1px solid #005533;
+      background: rgba(30, 0, 0, 0.6);
+      border: 1px solid #990000;
       border-radius: 12px;
       padding: 15px;
-      box-shadow: 0 0 10px #003322;
+      box-shadow: 0 0 10px #330000;
       cursor: pointer;
     }
 
     .product-title {
       font-size: 1.2em;
       font-weight: bold;
-      color: #00cc88;
+      color: #ff5555;
     }
 
-    .sub-options {
-      display: none;
+    .options-container {
       margin-top: 10px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .option-item {
-      background: rgba(0, 40, 20, 0.6);
-      border: 1px solid #004422;
-      border-radius: 8px;
-      padding: 10px;
-      margin-top: 8px;
-    }
-
-    .option-item span {
-      display: block;
-      font-size: 0.9em;
-      margin-bottom: 6px;
-    }
-
-    .buy-btn {
-      background-color: #00cc88;
-      color: black;
+    .option-btn {
+      background-color: #ff3333;
+      color: white;
       border: none;
-      padding: 8px;
+      padding: 10px;
       border-radius: 6px;
       font-weight: bold;
       font-family: inherit;
-      box-shadow: 0 0 6px #00aa66;
+      box-shadow: 0 0 6px #990000;
       cursor: pointer;
       transition: all 0.2s ease-in-out;
       width: 100%;
     }
 
-    .buy-btn:hover {
-      transform: scale(1.05);
+    .option-btn:hover {
+      background-color: #ff0000;
+      transform: scale(1.03);
     }
 
   </style>
@@ -106,52 +95,25 @@
   <div class="section">
 
     <!-- Panel -->
-    <div class="product-card" onclick="toggleOptions('panel')">
+    <div class="product-card" onclick="toggleOptions('panel-options')">
       <div class="product-title">Panel</div>
-      <div id="panel" class="sub-options">
-        <div class="option-item">
-          <span>1GB - Rp10.000</span>
-          <button class="buy-btn" onclick="event.stopPropagation(); buy('Panel 1GB')">Beli Sekarang</button>
-        </div>
-        <div class="option-item">
-          <span>3GB - Rp25.000</span>
-          <button class="buy-btn" onclick="event.stopPropagation(); buy('Panel 3GB')">Beli Sekarang</button>
-        </div>
-        <div class="option-item">
-          <span>Unlimited - Rp50.000</span>
-          <button class="buy-btn" onclick="event.stopPropagation(); buy('Panel Unlimited')">Beli Sekarang</button>
-        </div>
+      <div id="panel-options" class="options-container">
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Panel 1GB')">1GB - Rp10.000</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Panel 3GB')">3GB - Rp25.000</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Panel Unlimited')">Unlimited - Rp50.000</button>
       </div>
     </div>
 
     <!-- Script -->
-    <div class="product-card" onclick="toggleOptions('script')">
+    <div class="product-card" onclick="toggleOptions('script-options')">
       <div class="product-title">Script</div>
-      <div id="script" class="sub-options">
-        <div class="option-item">
-          <span>Script Aphophis</span>
-          <button class="buy-btn" onclick="event.stopPropagation(); buy('Script Aphophis')">Beli Sekarang</button>
-        </div>
-        <div class="option-item">
-          <span>Void Telegram</span>
-          <button class="buy-btn" onclick="event.stopPropagation(); buy('Void Telegram')">Beli Sekarang</button>
-        </div>
-        <div class="option-item">
-          <span>Bug Storm</span>
-          <button class="buy-btn" onclick="event.stopPropagation(); buy('Bug Storm')">Beli Sekarang</button>
-        </div>
-        <div class="option-item">
-          <span>Karasu WaTools</span>
-          <button class="buy-btn" onclick="event.stopPropagation(); buy('Karasu WaTools')">Beli Sekarang</button>
-        </div>
-        <div class="option-item">
-          <span>Bypass License</span>
-          <button class="buy-btn" onclick="event.stopPropagation(); buy('Bypass License')">Beli Sekarang</button>
-        </div>
-        <div class="option-item">
-          <span>Anti Crack Shell</span>
-          <button class="buy-btn" onclick="event.stopPropagation(); buy('Anti Crack Shell')">Beli Sekarang</button>
-        </div>
+      <div id="script-options" class="options-container">
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Script Aphophis')">Script Aphophis</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Void Telegram')">Void Telegram</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Bug Storm')">Bug Storm</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Karasu WaTools')">Karasu WaTools</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Bypass License')">Bypass License</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Anti Crack Shell')">Anti Crack Shell</button>
       </div>
     </div>
 
@@ -160,7 +122,7 @@
   <script>
     function toggleOptions(id) {
       const el = document.getElementById(id);
-      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+      el.style.display = el.style.display === 'flex' ? 'none' : 'flex';
     }
 
     function buy(product) {
