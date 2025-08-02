@@ -12,26 +12,57 @@
       padding: 30px 15px;
       font-family: 'Share Tech Mono', monospace;
       background: #000;
-      color: #ccc;
+      color: #ff4d4d;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      background-image: linear-gradient(to bottom, #000000, #111111);
+      background-image: linear-gradient(to bottom, #000000, #1a0000);
+      overflow-x: hidden;
     }
 
     h1 {
-      color: #eee;
+      color: #ff3333;
       text-align: center;
       font-size: 2.5em;
       margin-bottom: 10px;
+      position: relative;
+      text-shadow: 0 0 10px #ff0000;
+    }
+
+    .drip {
+      position: absolute;
+      width: 6px;
+      height: 20px;
+      background: #ff0000;
+      border-radius: 50%;
+      animation: drip 2s infinite ease-in-out;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes drip {
+      0% {
+        height: 0;
+        opacity: 0;
+      }
+      30% {
+        height: 20px;
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-50%) translateY(60px);
+        height: 0;
+        opacity: 0;
+      }
     }
 
     .thumbnail {
       width: 160px;
       height: 160px;
       border-radius: 12px;
-      box-shadow: 0 0 15px #999;
+      box-shadow: 0 0 20px #ff0000;
       margin: 20px 0;
     }
 
@@ -45,18 +76,18 @@
     }
 
     .product-card {
-      background: #111;
-      border: 1px solid #555;
+      background: #1a0000;
+      border: 1px solid #800000;
       border-radius: 12px;
       padding: 15px;
-      box-shadow: 0 0 10px #222;
+      box-shadow: 0 0 10px #330000;
       cursor: pointer;
     }
 
     .product-title {
       font-size: 1.2em;
       font-weight: bold;
-      color: #eee;
+      color: #ff6666;
     }
 
     .options-container {
@@ -67,28 +98,32 @@
     }
 
     .option-btn {
-      background-color: #ccc;
-      color: #000;
+      background-color: #cc0000;
+      color: #fff;
       border: none;
       padding: 10px;
       border-radius: 6px;
       font-weight: bold;
       font-family: inherit;
-      box-shadow: 0 0 5px #888;
+      box-shadow: 0 0 6px #ff1a1a;
       cursor: pointer;
       transition: all 0.2s ease-in-out;
       width: 100%;
     }
 
     .option-btn:hover {
-      background-color: #eee;
+      background-color: #e60000;
       transform: scale(1.03);
     }
   </style>
 </head>
 <body>
 
-  <h1>Youngboy Store</h1>
+  <h1>
+    Youngboy Store
+    <div class="drip"></div>
+  </h1>
+
   <img src="https://files.catbox.moe/1mm2yg.png" class="thumbnail" />
 
   <div class="section">
@@ -107,12 +142,12 @@
     <div class="product-card" onclick="toggleOptions('script-options')">
       <div class="product-title">Script</div>
       <div id="script-options" class="options-container">
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Script Dread nought')">Script Dread nought</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Voidmodx')">Voidmodx</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Karasu Invoked')">Karasu Invoked</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Nika')">Nika</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Evil Crasher')">Evil Crasher</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Karasu Via tele')">Karasu Via tele</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Script Dread nought')">Dread nought - Rp25.000</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Voidmodx')">Voidmodx - Rp20.000</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Karasu Invoked')">Karasu Invoked - Rp30.000</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Nika')">Nika - Rp25.000</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Evil Crasher')">Evil Crasher - Rp40.000</button>
+        <button class="option-btn" onclick="event.stopPropagation(); buy('Karasu Via tele')">Karasu via Tele - Rp15.000</button>
       </div>
     </div>
 

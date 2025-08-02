@@ -12,60 +12,61 @@
       padding: 30px;
       font-family: 'Share Tech Mono', monospace;
       background: #000;
-      color: #ccc;
+      color: #ff4d4d;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      background-image: linear-gradient(to bottom, #000000, #111111);
+      background-image: linear-gradient(to bottom, #000000, #1a0000);
     }
 
     h1 {
-      color: #eee;
+      color: #ff3333;
       margin-bottom: 20px;
       text-align: center;
+      text-shadow: 0 0 10px #ff0000;
     }
 
     .box {
-      background: #111;
+      background: #1a0000;
       padding: 25px;
-      border: 1px solid #555;
+      border: 1px solid #800000;
       border-radius: 12px;
-      box-shadow: 0 0 15px #222;
+      box-shadow: 0 0 15px #330000;
       max-width: 400px;
       width: 100%;
       text-align: center;
     }
 
     .qr {
-      width: 180px;
+      width: 240px;
       border-radius: 12px;
-      box-shadow: 0 0 12px #888;
-      margin: 15px 0;
+      box-shadow: 0 0 15px #ff1a1a;
+      margin: 20px 0;
     }
 
     .text {
-      color: #aaa;
+      color: #ff9999;
       margin: 10px 0;
     }
 
     .pay-btn {
       margin-top: 20px;
-      background-color: #ccc;
-      color: #000;
+      background-color: #cc0000;
+      color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 8px;
       font-weight: bold;
       font-family: inherit;
-      box-shadow: 0 0 6px #999;
+      box-shadow: 0 0 8px #ff1a1a;
       cursor: pointer;
       transition: 0.2s ease-in-out;
     }
 
     .pay-btn:hover {
-      background-color: #eee;
+      background-color: #e60000;
       transform: scale(1.05);
     }
   </style>
@@ -76,8 +77,10 @@
     <h1>Youngboy Payment</h1>
     <div class="text">Pembayaran untuk:</div>
     <div class="text" id="productName">Produk Tidak Dikenali</div>
+    <div class="text" id="price">Harga: -</div>
 
     <img src="https://files.catbox.moe/ov73ve.jpg" alt="QRIS" class="qr" />
+
     <div class="text">Atas Nama: <strong>YOUNGBOY</strong></div>
     <div class="text">DANA: 085775794286</div>
 
@@ -87,8 +90,22 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const product = params.get('product');
+
+    const prices = {
+      'Panel 1GB': 'Rp10.000',
+      'Panel 3GB': 'Rp25.000',
+      'Panel Unlimited': 'Rp50.000',
+      'Script Dread nought': 'Rp25.000',
+      'Voidmodx': 'Rp20.000',
+      'Karasu Invoked': 'Rp30.000',
+      'Nika': 'Rp25.000',
+      'Evil Crasher': 'Rp40.000',
+      'Karasu Via tele': 'Rp15.000'
+    };
+
     if (product) {
       document.getElementById('productName').innerText = product;
+      document.getElementById('price').innerText = 'Harga: ' + (prices[product] || '-');
     }
   </script>
 
