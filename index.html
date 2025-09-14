@@ -3,167 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Youngboy Store</title>
+  <title>Payment DANA</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
     body {
       margin: 0;
-      padding: 30px 15px;
+      padding: 30px;
       font-family: 'Share Tech Mono', monospace;
       background: #000;
       color: #ff4d4d;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       min-height: 100vh;
       background-image: linear-gradient(to bottom, #000000, #1a0000);
-      overflow-x: hidden;
+      text-align: center;
     }
 
     h1 {
       color: #ff3333;
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      position: relative;
+      margin-bottom: 25px;
       text-shadow: 0 0 10px #ff0000;
     }
 
-    .drip {
-      position: absolute;
-      width: 6px;
-      height: 20px;
-      background: #ff0000;
-      border-radius: 50%;
-      animation: drip 2s infinite ease-in-out;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    @keyframes drip {
-      0% {
-        height: 0;
-        opacity: 0;
-      }
-      30% {
-        height: 20px;
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(-50%) translateY(60px);
-        height: 0;
-        opacity: 0;
-      }
-    }
-
-    .thumbnail {
-      width: 160px;
-      height: 160px;
+    .qr {
+      width: 260px;
       border-radius: 12px;
-      box-shadow: 0 0 20px #ff0000;
-      margin: 20px 0;
+      box-shadow: 0 0 15px #ff1a1a;
+      margin-bottom: 25px;
     }
 
-    .section {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      width: 100%;
-      max-width: 360px;
-      margin-bottom: 40px;
-    }
-
-    .product-card {
-      background: #1a0000;
-      border: 1px solid #800000;
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 0 10px #330000;
-      cursor: pointer;
-    }
-
-    .product-title {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #ff6666;
-    }
-
-    .options-container {
-      margin-top: 10px;
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .option-btn {
-      background-color: #cc0000;
-      color: #fff;
-      border: none;
-      padding: 10px;
-      border-radius: 6px;
-      font-weight: bold;
-      font-family: inherit;
-      box-shadow: 0 0 6px #ff1a1a;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-      width: 100%;
-    }
-
-    .option-btn:hover {
-      background-color: #e60000;
-      transform: scale(1.03);
+    .text {
+      color: #ff9999;
+      font-size: 18px;
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
 
-  <h1>
-    Youngboy Store
-    <div class="drip"></div>
-  </h1>
+  <h1>Payment DANA</h1>
 
-  <img src="https://files.catbox.moe/1mm2yg.png" class="thumbnail" />
+  <img src="https://files.catbox.moe/ov73ve.jpg" alt="QR DANA" class="qr" />
 
-  <div class="section">
-
-    <!-- Panel -->
-    <div class="product-card" onclick="toggleOptions('panel-options')">
-      <div class="product-title">Panel</div>
-      <div id="panel-options" class="options-container">
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Panel 1GB')">1GB - Rp1.000</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Panel 3GB')">3GB - Rp2.000</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Panel Unlimited')">Unlimited - Rp10.000</button>
-      </div>
-    </div>
-
-    <!-- Script -->
-    <div class="product-card" onclick="toggleOptions('script-options')">
-      <div class="product-title">Script</div>
-      <div id="script-options" class="options-container">
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Script Dread nought')">Dread nought - Rp25.000</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Voidmodx')">Voidmodx - Rp20.000</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Karasu Invoked')">Karasu Invoked - Rp30.000</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Nika')">Nika - Rp25.000</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Evil Crasher')">Evil Crasher - Rp40.000</button>
-        <button class="option-btn" onclick="event.stopPropagation(); buy('Karasu Via tele')">Karasu via Tele - Rp15.000</button>
-      </div>
-    </div>
-
-  </div>
-
-  <script>
-    function toggleOptions(id) {
-      const el = document.getElementById(id);
-      el.style.display = el.style.display === 'flex' ? 'none' : 'flex';
-    }
-
-    function buy(product) {
-      const url = `payment.html?product=${encodeURIComponent(product)}`;
-      window.location.href = url;
-    }
-  </script>
+  <div class="text">Atas Nama: <strong>YOUNGBOY</strong></div>
+  <div class="text">DANA: <strong>085775794286</strong></div>
 
 </body>
 </html>
