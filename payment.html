@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Youngboy Payment</title>
+  <title>Payment DANA</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
@@ -23,91 +23,48 @@
 
     h1 {
       color: #ff3333;
-      margin-bottom: 20px;
-      text-align: center;
       text-shadow: 0 0 10px #ff0000;
+      margin-bottom: 30px;
     }
 
-    .box {
+    .section {
       background: #1a0000;
-      padding: 25px;
-      border: 1px solid #800000;
+      padding: 20px;
+      margin: 15px 0;
       border-radius: 12px;
       box-shadow: 0 0 15px #330000;
-      max-width: 400px;
-      width: 100%;
       text-align: center;
+      width: 100%;
+      max-width: 360px;
     }
 
     .qr {
-      width: 240px;
+      width: 260px;
       border-radius: 12px;
       box-shadow: 0 0 15px #ff1a1a;
-      margin: 20px 0;
     }
 
     .text {
       color: #ff9999;
-      margin: 10px 0;
-    }
-
-    .pay-btn {
-      margin-top: 20px;
-      background-color: #cc0000;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-family: inherit;
-      box-shadow: 0 0 8px #ff1a1a;
-      cursor: pointer;
-      transition: 0.2s ease-in-out;
-    }
-
-    .pay-btn:hover {
-      background-color: #e60000;
-      transform: scale(1.05);
+      font-size: 18px;
+      margin: 8px 0;
     }
   </style>
 </head>
 <body>
 
-  <div class="box">
-    <h1>Youngboy Payment</h1>
-    <div class="text">Pembayaran untuk:</div>
-    <div class="text" id="productName">Produk Tidak Dikenali</div>
-    <div class="text" id="price">Harga: -</div>
+  <h1>Payment DANA</h1>
 
-    <img src="https://files.catbox.moe/ov73ve.jpg" alt="QRIS" class="qr" />
-
-    <div class="text">Atas Nama: <strong>YOUNGBOY</strong></div>
-    <div class="text">DANA: 085775794286</div>
-
-    <button class="pay-btn" onclick="window.location.href='https://t.me/YOUNGBOYSHIT'">Sudah Bayar</button>
+  <!-- Section QR -->
+  <div class="section">
+    <img src="https://files.catbox.moe/ov73ve.jpg" alt="QR DANA" class="qr" />
   </div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const product = params.get('product');
-
-    const prices = {
-      'Panel 1GB': 'Rp10.000',
-      'Panel 3GB': 'Rp25.000',
-      'Panel Unlimited': 'Rp50.000',
-      'Script Dread nought': 'Rp25.000',
-      'Voidmodx': 'Rp20.000',
-      'Karasu Invoked': 'Rp30.000',
-      'Nika': 'Rp25.000',
-      'Evil Crasher': 'Rp40.000',
-      'Karasu Via tele': 'Rp15.000'
-    };
-
-    if (product) {
-      document.getElementById('productName').innerText = product;
-      document.getElementById('price').innerText = 'Harga: ' + (prices[product] || '-');
-    }
-  </script>
+  <!-- Section Info -->
+  <div class="section">
+    <div class="text">Atas Nama: <strong>YOUNGBOY</strong></div>
+    <div class="text">DANA: <strong>085775794286</strong></div>
+  </div>
 
 </body>
 </html>
